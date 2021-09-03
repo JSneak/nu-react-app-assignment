@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import data from "./data/data.json";
+import Container from "@material-ui/core/Container";
+import Header from "./components/header";
+import Search from "./components/search";
+import List from "./components/list";
 
 function App() {
+  const [itemList, setItemList] = useState(data);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container maxWidth="lg" display="flex" flexdirection="column">
+        <Header></Header>
+        <Search></Search>
+        <List itemList={itemList}></List>
+      </Container>
     </div>
   );
 }
