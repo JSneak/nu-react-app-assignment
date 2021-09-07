@@ -6,11 +6,14 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 const ListSection = ({itemList}) => {
     // hooks and any non jsx code
+    console.log("List Section ");
+    console.log(itemList);
+
     return (
         <React.Fragment>
             <Container display="flex" flexdirection="column">
             <Typography variant="h3" gutterBottom>
-                My Items {Object.keys(itemList).length}
+                My Items {itemList.length}
             </Typography>
             <ul>
             {itemList.map(item => {

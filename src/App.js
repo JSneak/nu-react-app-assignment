@@ -10,13 +10,16 @@ function App() {
   const [itemList, setItemList] = useState(data);
 
   const handleItemAdd = (n_name) => {
-    var new_id = Math.floor(Math.random() * 10000);
+    const new_id = itemList.length + 1;
     /* Modify Item List to add an item */
-    itemList.push({ id: new_id, name: n_name });
+    const newList = [
+      ...itemList,
+      { id: new_id, name: n_name },
+    ]; /* spread operator */
     /* Then I need to update the itemList with setItemList */
-    setItemList(itemList);
+    setItemList(newList);
     /* Then I pass this to a child component */
-    console.log(itemList);
+    console.log(newList);
   };
 
   return (
