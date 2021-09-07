@@ -1,8 +1,9 @@
 import React from "react"
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import ListItem from './listItem'
-import DeleteIcon from '@material-ui/icons/Delete';
+import List from '@material-ui/core/List';
+import CustomListItem from './customListItem'
+
 
 const ListSection = ({itemList, handleItemDelete}) => {
     // hooks and any non jsx code
@@ -15,16 +16,20 @@ const ListSection = ({itemList, handleItemDelete}) => {
             <Typography variant="h3" gutterBottom>
                 My Items {itemList.length}
             </Typography>
-            <ul>
-            {itemList.map(item => {
+            <List>
+                {itemList.map(item => {
+                    return (
+                        <React.Fragment key={item.id}>
+                            <CustomListItem item={item} handleItemDelete={handleItemDelete}></CustomListItem>
+                        </React.Fragment>
+                    )
+                })}
+            {/* {itemList.map(item => {
                return (
-                   <li key={item.id}>
-                    <ListItem item={item} />
-                    <a onClick={handleItemDelete(item.id)}><DeleteIcon /></a>
-                   </li>
+                    <a key={item.id}>{item}</a>
                )
-           })}
-           </ul>
+           })} */}
+           </List>
             </Container>
         </React.Fragment>
     )
