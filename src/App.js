@@ -9,11 +9,21 @@ import List from "./components/list";
 function App() {
   const [itemList, setItemList] = useState(data);
 
+  const handleItemAdd = (n_name) => {
+    var new_id = Math.floor(Math.random() * 10000);
+    /* Modify Item List to add an item */
+    itemList.push({ id: new_id, name: n_name });
+    /* Then I need to update the itemList with setItemList */
+    setItemList(itemList);
+    /* Then I pass this to a child component */
+    console.log(itemList);
+  };
+
   return (
     <div className="App">
       <Container maxWidth="lg" display="flex" flexdirection="column">
         <Header></Header>
-        <Search></Search>
+        <Search handleItemAdd={handleItemAdd}></Search>
         <List itemList={itemList}></List>
       </Container>
     </div>

@@ -2,6 +2,7 @@ import React from "react"
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import ListItem from './listItem'
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const ListSection = ({itemList}) => {
     // hooks and any non jsx code
@@ -16,6 +17,7 @@ const ListSection = ({itemList}) => {
                return (
                    <li key={item.id}>
                     <ListItem item={item} />
+                    <a><DeleteIcon /></a>
                    </li>
                )
            })}
