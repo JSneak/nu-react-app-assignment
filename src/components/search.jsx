@@ -9,8 +9,10 @@ const search = (props) => {
     const [searchText, setText] = useState("")
 
     const handleButtonAdd = () => {
-        if(searchText !== "") 
-            props.handleItemAdd(searchText)
+        if(searchText !== "") {
+            props.handleItemAdd(searchText);
+            setText("");
+        }
     }
 
     const handleChange = (event) => {
