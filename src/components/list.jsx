@@ -4,7 +4,7 @@ import Container from '@material-ui/core/Container';
 import ListItem from './listItem'
 import DeleteIcon from '@material-ui/icons/Delete';
 
-const ListSection = ({itemList}) => {
+const ListSection = ({itemList, handleItemDelete}) => {
     // hooks and any non jsx code
     console.log("List Section ");
     console.log(itemList);
@@ -20,7 +20,7 @@ const ListSection = ({itemList}) => {
                return (
                    <li key={item.id}>
                     <ListItem item={item} />
-                    <a><DeleteIcon /></a>
+                    <a onClick={handleItemDelete(item.id)}><DeleteIcon /></a>
                    </li>
                )
            })}

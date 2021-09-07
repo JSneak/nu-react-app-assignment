@@ -22,12 +22,16 @@ function App() {
     console.log(newList);
   };
 
+  const handleItemDelete = (id) => {
+    console.log(id);
+  };
+
   return (
     <div className="App">
       <Container maxWidth="lg" display="flex" flexdirection="column">
         <Header></Header>
         <Search handleItemAdd={handleItemAdd}></Search>
-        <List itemList={itemList}></List>
+        <List itemList={itemList} handleItemDelete={handleItemDelete}></List>
       </Container>
     </div>
   );
