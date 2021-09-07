@@ -24,11 +24,6 @@ const ListSection = ({itemList, handleItemDelete}) => {
                         </React.Fragment>
                     )
                 })}
-            {/* {itemList.map(item => {
-               return (
-                    <a key={item.id}>{item}</a>
-               )
-           })} */}
            </List>
             </Container>
         </React.Fragment>

@@ -10,7 +10,7 @@ function App() {
   const [itemList, setItemList] = useState(data);
 
   const handleItemAdd = (n_name) => {
-    const new_id = itemList.length + 1;
+    const new_id = itemList.length + 1 + Math.floor(Math.random() * 9999);
     /* Modify Item List to add an item */
     const newList = [
       ...itemList,
@@ -23,7 +23,9 @@ function App() {
   };
 
   const handleItemDelete = (id) => {
-    console.log(id);
+    /* Using Filter here because we want everything but the object with id */
+    const newList = itemList.filter((item) => item.id !== id);
+    setItemList(newList);
   };
 
   return (

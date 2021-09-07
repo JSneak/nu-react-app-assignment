@@ -14,7 +14,7 @@ const CustomListItem = ({item, handleItemDelete}) => {
                 primary={item.name}
             />
             <ListItemSecondaryAction>
-                <IconButton edge="end" aria-label="delete" onClick={handleItemDelete(item.id)}>
+                <IconButton edge="end" aria-label="delete" onClick={() => {handleItemDelete(item.id)}}>
                     <DeleteIcon />
                 </IconButton>
             </ListItemSecondaryAction>
