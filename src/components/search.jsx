@@ -29,10 +29,11 @@ const search = (props) => {
       >
         <TextField
           id="outlined-basic"
-          label="Outlined"
+          label="Item Name"
           variant="outlined"
           value={searchText}
           onChange={handleChange}
+          placeholder="Ex: CSS"
         />
         <Button variant="outlined" color="secondary" onClick={handleButtonAdd}>
           Add Item
